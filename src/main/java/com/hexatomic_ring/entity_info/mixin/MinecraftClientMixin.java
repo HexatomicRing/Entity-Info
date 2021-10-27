@@ -41,7 +41,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.*;
-import java.util.function.Consumer;
 
 @Mixin(MinecraftClient.class)
 public abstract class MinecraftClientMixin {
@@ -89,8 +88,8 @@ public abstract class MinecraftClientMixin {
 			if(e instanceof LivingEntity){
 				try{
 					String h1 = String.format("%.1f",((LivingEntity)e).getMaxHealth());
-					String h2 = String.format("%.1f",((LivingEntity)e).getHealth());
-					player.sendMessage(new TranslatableText("entity_info.living_entity.show_health", new Object[]{h1,h2}),false);
+					String h2 = String.format("%.1f",Math.min(((LivingEntity)e).getHealth(),((LivingEntity)e).getMaxHealth()));
+					player.sendMessage(new TranslatableText("entity_info.living_entity.show_health", new Object[]{h2,h1}),false);
 				}catch (Exception ignored){}
 			}
 			if(e instanceof HorseEntity){
