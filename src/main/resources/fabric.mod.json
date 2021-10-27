@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "entity_info",
+  "version": "${version}",
+
+  "name": "Entity Info",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Hexatomic Ring"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/entity_info/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.hexatomic_ring.entity_info.EntityInfo"
+    ]
+  },
+  "mixins": [
+    "entity_info.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
