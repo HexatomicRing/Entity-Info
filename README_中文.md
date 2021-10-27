@@ -1,9 +1,8 @@
-# Fabric Example Mod
+# 生物信息显示
 
-## Setup
+这是一个基于fabric的客户端模组。
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+## 如何使用
 
-## License
+右键一个实体以获取实体信息。由于部分信息需要向服务器请求，很可能无法获取。不过马屁属性和熊猫基因这些信息总能显示。
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.

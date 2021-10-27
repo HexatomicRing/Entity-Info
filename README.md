@@ -1,9 +1,8 @@
-# Fabric Example Mod
+# Entity Info
 
-## Setup
+This is a fabric client mod.
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+## How to Use
 
-## License
+Right click an entity to see its information. Some information need to get from the server, and this may be blocked. Anyway, the horse properties and pandas genes are always able to be seen.
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
