@@ -31,5 +31,7 @@
   "entity_info.passive_entity.breed": "繁殖倒计时: %1$s 分 %2$s 秒",
   "entity_info.passive_entity.can_breed": "可繁殖",
   "entity_info.block.bee_count": "蜂巢/蜂箱蜜蜂计数: %1$s",
-  "entity_info.block.honey_level": "蜂蜜等级: %1$s / 5"
+  "entity_info.tropical_fish_entity.info": "热带鱼类型: %1$s-%2$s %3$s",
+  "entity_info.tropical_fish_entity.shape.invisible": "隐形",
+  "entity_info.tropical_fish_entity.shape.no_pattern": "无图案"
 }

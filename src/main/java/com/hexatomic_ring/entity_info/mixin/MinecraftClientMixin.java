@@ -137,7 +137,13 @@ public abstract class MinecraftClientMixin {
 					});
 				}catch (Exception ignored){}
 			}
+			if(e instanceof TropicalFishEntity){
+				int variant = ((TropicalFishEntity)e).getVariant();
+				player.sendMessage(Text.translatable("entity_info.tropical_fish_entity.info",
+						new Object[]{getColor((variant & 0xFF0000) >> 16), getColor((variant & 0xFF000000) >> 24),
+						getTropicalFishShape(Math.min(variant & 0xFF, 1),Math.min((variant & 0xFF00) >> 8, 5))}));
 
+			}
 			if(e instanceof ZombieEntity){
 				try{
 					player.networkHandler.getDataQueryHandler().queryEntityNbt(e.getId(), (nbt) ->{
@@ -239,6 +245,48 @@ public abstract class MinecraftClientMixin {
 			case AGGRESSIVE -> Text.translatable("entity_info.panda_entity.gene.aggressive", new Object[]{});
 		};
 	}
-
+	private Text getTropicalFishShape(int size, int shape){
+		return switch (size) {
+			case 1 -> switch (shape) {
+				case 0 -> Text.translatable("entity.minecraft.tropical_fish.type.flopper");
+				case 1 -> Text.translatable("entity.minecraft.tropical_fish.type.stripey");
+				case 2 -> Text.translatable("entity.minecraft.tropical_fish.type.glitter");
+				case 3 -> Text.translatable("entity.minecraft.tropical_fish.type.blockfish");
+				case 4 -> Text.translatable("entity.minecraft.tropical_fish.type.betty");
+				case 5 -> Text.translatable("entity.minecraft.tropical_fish.type.clayfish");
+				default -> Text.translatable("entity_info.tropical_fish_entity.shape.no_pattern");
+			};
+			case 0 -> switch (shape) {
+				case 0 -> Text.translatable("entity.minecraft.tropical_fish.type.kob");
+				case 1 -> Text.translatable("entity.minecraft.tropical_fish.type.sunstreak");
+				case 2 -> Text.translatable("entity.minecraft.tropical_fish.type.snooper");
+				case 3 -> Text.translatable("entity.minecraft.tropical_fish.type.dasher");
+				case 4 -> Text.translatable("entity.minecraft.tropical_fish.type.brinely");
+				case 5 -> Text.translatable("entity.minecraft.tropical_fish.type.spotty");
+				default -> Text.translatable("entity_info.tropical_fish_entity.shape.no_pattern");
+			};
+			default -> Text.translatable("entity_info.tropical_fish_entity.shape.invisible");
+		};
+	}
+	private Text getColor(int id){
+		return switch (id) {
+			case 0 -> Text.translatable("color.minecraft.white");
+			case 1 -> Text.translatable("color.minecraft.orange");
+			case 2 -> Text.translatable("color.minecraft.magenta");
+			case 3 -> Text.translatable("color.minecraft.light_blue");
+			case 4 -> Text.translatable("color.minecraft.yellow");
+			case 5 -> Text.translatable("color.minecraft.lime");
+			case 6 -> Text.translatable("color.minecraft.pink");
+			case 7 -> Text.translatable("color.minecraft.gray");
+			case 8 -> Text.translatable("color.minecraft.light_gray");
+			case 9 -> Text.translatable("color.minecraft.cyan");
+			case 10 -> Text.translatable("color.minecraft.purple");
+			case 11 -> Text.translatable("color.minecraft.blue");
+			case 12 -> Text.translatable("color.minecraft.brown");
+			case 13 -> Text.translatable("color.minecraft.green");
+			case 14 -> Text.translatable("color.minecraft.red");
+			default -> Text.translatable("color.minecraft.black");
+		};
+	}
 
 }

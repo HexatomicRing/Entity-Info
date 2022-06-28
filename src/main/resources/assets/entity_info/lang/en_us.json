@@ -31,5 +31,8 @@
     "entity_info.passive_entity.breed": "Breed countdown: %1$s m %2$s s",
     "entity_info.passive_entity.can_breed": "Can Breed",
     "entity_info.block.bee_count": "bee count in bee nest/beehive: %1$s",
-    "entity_info.block.honey_level": "Honey level: %1$s / 5"
+    "entity_info.block.honey_level": "Honey level: %1$s / 5",
+    "entity_info.tropical_fish_entity.info": "Tropical Fish Type: %1$s-%2$s %3$s",
+    "entity_info.tropical_fish_entity.shape.invisible": "Invisible",
+    "entity_info.tropical_fish_entity.shape.no_pattern": "No Pattern"
 }
